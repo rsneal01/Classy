@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get '/teachers/signup' => 'teachers#new'
+  post '/teachers/singup' => 'teachers#create'
+  
   resources :enrolled_courses
   resources :courses
   resources :teachers

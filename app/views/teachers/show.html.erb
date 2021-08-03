@@ -1,0 +1,5 @@
+<h1> <%= @teacher.name %>'s Courses </h1>
+
+<% @teacher.courses.each do |course| %>
+    <%= course.title %>
+<% end %>
