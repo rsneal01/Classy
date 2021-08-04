@@ -14,6 +14,7 @@ class TeachersController < ApplicationController
     end
 
     def show
+        # binding.pry
         @teacher = Teacher.find(params[:id])
     end
 
