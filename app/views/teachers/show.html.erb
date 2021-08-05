@@ -1,7 +1,10 @@
 <h1> <%= @teacher.name %></h1>
+<br>
+<h2> <%= @teacher.bio %> </h2>
+<br>
+<%= link_to "Create a Course", new_course_path %>
+<br>
+<%= link_to "Log Out", session_path, method:'delete' %>
+<br>
 
-<% @teacher.courses.each do |course| %>
-    <%= course.title %>
-<% end %>
 
-<% 

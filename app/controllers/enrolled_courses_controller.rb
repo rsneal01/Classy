@@ -1,2 +1,0 @@
-class EnrolledCoursesController < ApplicationController
-end
