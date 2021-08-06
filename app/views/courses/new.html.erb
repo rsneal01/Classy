@@ -7,5 +7,6 @@
     <%= f.text_field :time %>
     <%= f.label :description %>
     <%= f.text_field :description %>
+    <%= f.hidden_field :teacher_id, value: @teacher.id %>
     <%= f.submit %>
     <% end %>

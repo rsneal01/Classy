@@ -1,9 +1,12 @@
 class CoursesController < ApplicationController
     def new
+        
+        @teacher = current_user
         @course = Course.new
     end
 
     def create
+        binding.pry
         @course = Course.create(course_params)
         redirect_to course_path(@course)
     end
@@ -14,7 +17,7 @@ class CoursesController < ApplicationController
     end
 
     def course_params
-        params.require(:course).permit(:title, :time, :description)
+        params.require(:course).permit(:title, :time, :description, :teacher_id)
     end
 
 
