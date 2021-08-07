@@ -4,8 +4,8 @@ class SessionController < ApplicationController
     end
 
     def create
-     
-        if @teacher = Teacher.find_by(name: params[:teacher][:name])
+        # binding.pry
+        if @teacher = Teacher.find_by(name: params[:name])
             session[:teacher_id] = @teacher.id
             redirect_to teacher_path(@teacher)
         else

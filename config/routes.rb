@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-
-  # get '/teachers/signup' => 'teachers#new'
-  # post '/teachers/singup' => 'teachers#create'
-  
+  root 'static#home'  
   resources :enrolled_courses
   resources :courses
 
