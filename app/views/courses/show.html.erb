@@ -1,0 +1,9 @@
+<h1> <%= @course.title %> </h1>
+Taught by: <%= @course.teacher.name %>
+<br>
+<h3> <%= @course.time %> </h3>
+<h3> <%= @course.description %> </h3>
+<br>
+<% if @teacher.id == @course.teacher.id %>
+    <%= link_to "Edit this Course", edit_course_path(@course) %> 
+<% end %>
