@@ -1,4 +1,9 @@
 class TeachersController < ApplicationController
+
+    def index
+        @teachers = Teacher.all
+    end
+
     def new
         @teacher = Teacher.new
     end
@@ -19,7 +24,7 @@ class TeachersController < ApplicationController
     end
 
     def teacher_params
-        params.require(:teacher).permit(:name, :password)
+        params.require(:teacher).permit(:name, :password, :bio, :admin)
     end
 
 end

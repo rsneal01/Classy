@@ -1,4 +1,13 @@
 class CoursesController < ApplicationController
+
+    def index
+        if params[:teacher_id]
+            @courses = Teacher.find(params[:teacher_id]).courses
+        else
+            @courses = Course.all
+        end
+    end
+
     def new
         @teacher = current_user
         @course = Course.new

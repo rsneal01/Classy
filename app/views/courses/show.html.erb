@@ -1,5 +1,5 @@
 <h1> <%= @course.title %> </h1>
-Taught by: <%= @course.teacher.name %>
+Taught by: <%= link_to "#{@course.teacher.name}", teacher_path(@course.teacher) %>
 <br>
 <h3> <%= @course.time %> </h3>
 <h3> <%= @course.description %> </h3>

@@ -1,10 +1,15 @@
 <h1> <%= @teacher.name %></h1>
 <br>
 <h2> <%= @teacher.bio %> </h2>
+<%= link_to "View all teachers", teachers_path %>
 <br>
 <%= link_to "Create course", new_course_path %>
 <br>
 <%= link_to "Log Out", session_path, method:'delete' %>
 <br>
-
+<%= link_to "#{@teacher.name}'s Courses", teacher_courses_path(@teacher) %> 
+<br>
+<% if @teacher.admin? %>
+    <%= link_to "Students Index", students_path %> 
+<% end %>
 
