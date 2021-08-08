@@ -1,4 +1,4 @@
-<%= @teachers.each do |teacher| %>
+<% @teachers.each do |teacher| %>
     <%= teacher.name %>
     <%= link_to "#{teacher.name}'s Courses", teacher_courses_path(teacher) %> 
 <% end %>
