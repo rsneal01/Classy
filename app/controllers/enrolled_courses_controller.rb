@@ -5,8 +5,10 @@ class EnrolledCoursesController < ApplicationController
 
     end
 
-    def create
-        
+    def create  
+        course = Course.find_by(id: params[:course][:id])
+        @enrolled_course = EnrolledCourse.new(course_id: course.id, teacher_id: course.teacher.id, student_id: params[:student_id])
+        # binding.pry
     end
 
     def show
