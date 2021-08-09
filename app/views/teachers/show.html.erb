@@ -9,6 +9,8 @@
 <br>
 <%= link_to "#{@teacher.name}'s Courses", teacher_courses_path(@teacher) %> 
 <br>
+<%= link_to "View all courses", courses_path %>
+<br>
 <% if @teacher.admin? %>
     <%= link_to "Students Index", students_path %> 
 <% end %>
