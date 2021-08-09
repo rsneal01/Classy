@@ -2,4 +2,9 @@
 
 <h3> <%= @student.schedule %> </h3>
 
-<%= link_to "Add a course for this student", new_enrolled_course_path %> 
+
+
+<%= form_tag("/enrolled_courses/new", :method => "get") do %>
+    <%= hidden_field_tag :student_id, @student.id %>
+    <%= submit_tag("Add a course for this student") %>
+<% end %>
