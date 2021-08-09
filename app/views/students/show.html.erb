@@ -3,6 +3,10 @@
 <h3> <%= @student.schedule %> </h3>
 
 
+<% @enrolled_courses.each do |enrolled_course| %> 
+    <h3> <%= enrolled_course.title %> - <%= enrolled_course.time %> - <%= enrolled_course.teacher.name %> </h3>
+    <% end %> 
+
 
 <%= form_tag("/enrolled_courses/new", :method => "get") do %>
     <%= hidden_field_tag :student_id, @student.id %>

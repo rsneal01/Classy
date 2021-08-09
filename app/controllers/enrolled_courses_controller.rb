@@ -7,7 +7,13 @@ class EnrolledCoursesController < ApplicationController
 
     def create  
         course = Course.find_by(id: params[:course][:id])
-        @enrolled_course = EnrolledCourse.new(course_id: course.id, teacher_id: course.teacher.id, student_id: params[:student_id])
+        @student = Student.find(params[:student_id])
+        @enrolled_course = EnrolledCourse.find_or_create_by(course_id: course.id, teacher_id: course.teacher.id, student_id: @student.id)
+        if @enrolled_course.save
+            redirect_to student_path(@student)
+        else
+            render 'new'
+        end
         # binding.pry
     end
 

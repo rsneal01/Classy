@@ -15,8 +15,12 @@ class CoursesController < ApplicationController
 
     def create
         # binding.pry
-        @course = Course.create(course_params)
-        redirect_to course_path(@course)
+        @course = Course.new(course_params)
+        if @course.save
+            redirect_to course_path(@course)
+        else 
+            render 'new'
+        end
     end
     
     def show

@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
     # has_secure_password
-    has_many :teachers, through: :courses
-    has_many :courses
+    has_many :teachers, through: :enrolled_courses
+    has_many :enrolled_courses
     # has_secure_password
 end

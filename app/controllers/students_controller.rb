@@ -18,6 +18,10 @@ class StudentsController < ApplicationController
 
     def show
         @student = Student.find(params[:id])
+        @enrolled_courses = @student.enrolled_courses.map do |enrolled_course|
+            Course.find_by(id: enrolled_course.course_id)
+        end
+        # binding.pry
     end
 
     def student_params
