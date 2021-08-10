@@ -10,7 +10,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
     <%= yield %>
+    
   </body>
 </html>
+<br>
+<%= link_to "Log Out", session_path, method:'delete' %>
+<br>
+<%= link_to "Home", root_path %>

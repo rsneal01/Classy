@@ -20,6 +20,7 @@ class StudentsController < ApplicationController
         @student = Student.find(params[:id])
         @enrolled_courses = @student.enrolled_courses.map do |enrolled_course|
             Course.find_by(id: enrolled_course.course_id)
+            # map to return array of courses from enrolled courses
         end
         # binding.pry
     end

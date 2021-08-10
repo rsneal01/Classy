@@ -23,6 +23,16 @@ class TeachersController < ApplicationController
         @teacher = Teacher.find(params[:id])
     end
 
+    def edit
+        @teacher = current_user
+    end
+
+    def update
+        teacher = Teacher.find(params[:id])
+        teacher.update(teacher_params)
+        redirect_to teacher_path(teacher)
+    end
+
     def teacher_params
         params.require(:teacher).permit(:name, :password, :bio, :admin)
     end

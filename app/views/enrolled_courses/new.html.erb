@@ -3,5 +3,5 @@
 <%= form_for @enrolled_course do |f| %>
     <%= collection_select :course, :id, Course.all, :id, :title %>
     <%= hidden_field_tag :student_id, @student.id %>
-    <%= f.submit %>
+    <%= f.submit "Enroll this student" %>
 <% end %>
