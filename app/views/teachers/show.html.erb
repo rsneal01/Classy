@@ -3,7 +3,7 @@
 <h2> <%= @teacher.bio %> </h2>
 <%= link_to "View all teachers", teachers_path %>
 <br>
-<%= link_to "Create course", new_course_path %>
+<%= link_to "Create course", new_teacher_course_path(@teacher) %>
 <br>
 <%= link_to "#{@teacher.name}'s Courses", teacher_courses_path(@teacher) %> 
 <br>

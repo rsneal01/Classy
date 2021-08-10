@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :courses
 
   resources :teachers do
-    resources :courses, only: [:show, :index]
+    resources :courses, only: [:show, :index, :new]
   end
   
   resources :students

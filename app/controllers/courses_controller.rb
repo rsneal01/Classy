@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
 
     def new
         @teacher = current_user
-        @course = Course.new
+        @course = Course.new(teacher_id: params[:teacher_id])
     end
 
     def create
