@@ -1,3 +1,7 @@
 <% @courses.each do |course| %>
-    <h3> <%= course.title %> - <%= course.teacher.name %> - <%= course.time %> </h3>
+    <h3> <%= course.title %> - <%= course.teacher.name %> - <%= course.time %> 
+        <% if @teacher.id == course.teacher.id %>
+         <%= link_to "Edit this Course", edit_course_path(course) %> </h3>
+        <% end %>
 <% end %>
+<br>

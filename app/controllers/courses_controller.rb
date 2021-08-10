@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
 
     def index
+        @teacher = current_user
         if params[:teacher_id]
             @courses = Teacher.find(params[:teacher_id]).courses
         else
@@ -30,6 +31,7 @@ class CoursesController < ApplicationController
     end
 
     def edit
+        @teacher = current_user
         @course = Course.find_by(id: params[:id])
     end
 
