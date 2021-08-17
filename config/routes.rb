@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   end
   
   resources :students
-
+  match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]
+  # get '/auth/github/callback' => 'sessions#create'
   get '/signin', to: 'session#new', as: 'signin'
   get '/auth/facebook/callback' => 'sessions#create'
   post '/session', to: 'session#create', as: 'session'

@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-
+gem 'thin'
 gem 'omniauth'
+gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 ruby '2.7.3'
