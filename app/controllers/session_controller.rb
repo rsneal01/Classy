@@ -10,6 +10,8 @@ class SessionController < ApplicationController
         # if @teacher && @teacher.authenticate(params[:password])
             session[:teacher_id] = @teacher.id
             redirect_to teacher_path(@teacher)
+        elsif @teacher = Teacher.find_by(id: params[:teacher_id])
+            session[:teacher_id] = @teacher.id
         else
             render 'new'
         end

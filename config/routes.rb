@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
   
   resources :students
+
   get '/signin', to: 'session#new', as: 'signin'
+  get '/auth/facebook/callback' => 'sessions#create'
   post '/session', to: 'session#create', as: 'session'
   delete '/session/', to: 'session#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
