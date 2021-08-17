@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
 ruby '2.7.3'
+gem 'dotenv-rails'
 gem 'bcrypt'
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
