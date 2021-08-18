@@ -3,8 +3,13 @@
     <h3> <%=link_to "#{student.name}", student_path(student) %> </h3>
 <% end %>
 
-<h1> Students with Courses: </h1>
-<% @enrolled_students.each do |student| %>
+<h1> Students without Courses: </h1>
+<% @unenrolled_students.each do |student| %>
+    <h3> <%=link_to "#{student.name}", student_path(student) %> </h3>
+<% end %>
+
+<h1> Middle-School Students without Courses: </h1>
+<% @unenrolled_students_in_middle.each do |student| %>
     <h3> <%=link_to "#{student.name}", student_path(student) %> </h3>
 <% end %>
 

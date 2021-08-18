@@ -1,7 +1,9 @@
 class StudentsController < ApplicationController
     def index
         @students = Student.all
-        @enrolled_students = Student.enrolled
+        @unenrolled_students = Student.unenrolled
+        @unenrolled_students_in_middle = Student.unenrolled_and_in_middle
+        # @current_teacher_students = Student.enrolled_in_current_teacher
         # binding.pry
     end
 
@@ -28,7 +30,7 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-        params.require(:student).permit(:name, :schedule)
+        params.require(:student).permit(:name, :schedule, :grade)
     end
 
 end
