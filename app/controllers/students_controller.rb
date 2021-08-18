@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
     def index
         @students = Student.all
+        @enrolled_students = Student.enrolled
+        # binding.pry
     end
 
     def new

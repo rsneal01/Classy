@@ -10,6 +10,8 @@ class EnrolledCoursesController < ApplicationController
         @student = Student.find(params[:student_id])
         @enrolled_course = EnrolledCourse.find_or_create_by(course_id: course.id, teacher_id: course.teacher.id, student_id: @student.id)
         if @enrolled_course.save
+            @student.enrolled = true
+            @student.save
             redirect_to student_path(@student)
         else
             render 'new'
