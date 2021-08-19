@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Classy Rails Project:
 
-Things you may want to cover:
+Basic user authentication system allowing teachers to sign up/loging, create/edit courses, view their course index and other teachers' courses, view students enrolled in their courses.  Admins have the ability to add students to the school and enroll students in courses.
 
-* Ruby version
+Requirements
+    Ruby 2.7.3
+    Github
 
-* System dependencies
+Repo
+    https://github.com/rsneal01/Classy
 
-* Configuration
+Configuration
+    Run bundle install
 
-* Database creation
+Rails server
+    Run rails s
+    
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
