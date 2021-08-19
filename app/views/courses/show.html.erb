@@ -7,3 +7,5 @@ Taught by: <%= link_to "#{@course.teacher.name}", teacher_path(@course.teacher) 
 <% if @teacher.id == @course.teacher.id %>
     <%= link_to "Edit this Course", edit_course_path(@course) %> 
 <% end %>
+<br>
+<%= link_to "Your teacher portal", teacher_path(@teacher) %>

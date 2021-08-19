@@ -1,4 +1,3 @@
 <% @teachers.each do |teacher| %>
-    <%= teacher.name %>
-    <%= link_to "#{teacher.name}'s Courses", teacher_courses_path(teacher) %> 
+    <h3> <%= link_to "#{teacher.name}", teacher_courses_path(teacher) %> </h3>
 <% end %>

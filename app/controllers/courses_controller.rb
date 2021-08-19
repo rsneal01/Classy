@@ -2,7 +2,9 @@ class CoursesController < ApplicationController
 
     def index
         @teacher = current_user
-        if params[:teacher_id]
+        if !@teacher
+            redirect_to root_path, notice: "Sign up or Sign in to view courses"
+        elsif params[:teacher_id]
             @courses = Teacher.find(params[:teacher_id]).courses
         else
             @courses = Course.all
