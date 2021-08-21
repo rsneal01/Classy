@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   end
   
   resources :students
-  match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]
-  # get '/auth/github/callback' => 'sessions#create'
-  get '/signin', to: 'session#new', as: 'signin'
-  get '/auth/facebook/callback' => 'sessions#create'
-  post '/session', to: 'session#create', as: 'session'
-  delete '/session/', to: 'session#destroy'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  # get '/auth/:provider/callback' => 'sessions#create'
+  get '/signin', to: 'sessions#new', as: 'signin'
+  # get '/auth/facebook/callback' => 'sessions#create'
+  post '/session', to: 'sessions#create', as: 'session'
+  delete '/session/', to: 'sessions#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
