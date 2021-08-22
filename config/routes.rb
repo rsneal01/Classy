@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   
   resources :students
-  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match '/auth/:provider/callback', to: 'sessions#omni_create', via: [:get, :post]
   # get '/auth/:provider/callback' => 'sessions#create'
   get '/signin', to: 'sessions#new', as: 'signin'
   # get '/auth/facebook/callback' => 'sessions#create'
