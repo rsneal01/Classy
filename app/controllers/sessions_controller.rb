@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
             session[:teacher_id] = @teacher.id
             redirect_to teacher_path(@teacher)
         else
-            redirect_to new_teacher_path
+            redirect_to signin_path, notice: "Username and password must be present"
         end
     end
 
